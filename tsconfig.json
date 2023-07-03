@@ -1,4 +1,5 @@
 {
+    "extends": "@sapphire/ts-config",
     "compilerOptions": {
         "target": "es5",
         "lib": [
@@ -26,8 +27,11 @@
         "incremental": true,
         "plugins": [
             {
-                "name": "next"
-            }
+                "name": "next",
+            },
+            {
+                "name": "typescript-plugin-css-modules"
+            },
         ],
     },
     "include": [
