@@ -1,4 +1,4 @@
 @charset "utf-8";
-@import "bulma/sass/utilities/initial-variables.sass";
-@import "styles/theme/theme.scss";
-@import "bulma/bulma.sass";
+@import "node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "./theme/theme.scss";
+@import "node_modules/bulma/bulma.sass";
