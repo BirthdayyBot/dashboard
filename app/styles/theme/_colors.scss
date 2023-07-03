@@ -1,0 +1,63 @@
+// theme/_colors.scss
+
+// initial-variables
+$turquoise: #78c2ad;
+$purple: #bcacdf;
+$orange: #e9495c;
+$cyan: #046589;
+$blue: #7892c2;
+$white: #fdfdfd;
+
+//derived variables
+// $light: #b8ded6;
+$light: #dfe3e2;
+$dark: #262828;
+
+$primary: $turquoise;
+// $primary-light: lighten($primary, 30%);
+// $primary-dark: darken($primary, 30%);
+
+$secondary: #f3969a;
+// $primary-light: lighten($secondary, 30%);
+// $primary-dark: darken($secondary, 30%);
+
+$highlight: #e9495c;
+$highlight: #2c2f36;
+
+$danger: $secondary;
+
+.is-color-primary {
+  color: #78c2ad;
+}
+.has-text-secondary {
+  color: $secondary;
+}
+.is-secondary {
+  background-color: $secondary !important;
+  color: $white !important;
+}
+
+/*
+
+PRIMARY / LIGHT BLUE
+#78C2AD
+
+PINK
+#F3969A
+
+PURPLE
+#bcacdf
+
+DARK
+#262828
+#2f4858
+
+LIGHT
+#FEFEFE
+
+HIGHLIGHT?
+#12ab93
+#e9495c
+
+https://poolors.com/fefefe-ec237a
+*/

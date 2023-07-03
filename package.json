@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "birthdayy.xyz-dashboard",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,5 +14,24 @@
     "next": "13.4.7",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "description": "This is a dashboard for the Birthdayy Discord Bot.",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BirthdayyBot/dashboard.git"
+  },
+  "keywords": [
+    "bot-dashboard"
+  ],
+  "author": "nikolaischunk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BirthdayyBot/dashboard/issues"
+  },
+  "homepage": "https://github.com/BirthdayyBot/dashboard#readme",
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "sass": "^1.63.6"
   }
 }

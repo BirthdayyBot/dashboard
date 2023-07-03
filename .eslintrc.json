@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+    "extends": [
+        "next/core-web-vitals",
+        "@sapphire",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "ignorePatterns": [
+        "dist/",
+        ".next/"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+    },
+    "rules": {
+        "radix": [
+            "warn",
+            "as-needed"
+        ],
+        "no-mixed-spaces-and-tabs": [
+            "error",
+            "smart-tabs"
+        ]
+    }
 }
