@@ -1,18 +1,24 @@
 {
     "extends": "@sapphire/ts-config",
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@styles/*": [
+                "src/styles/*",
+            ],
+            "@components/*": [
+                "src/components/*",
+            ],
+            "@lib/*": [
+                "src/lib/*",
+            ],
+        },
         "target": "es5",
         "lib": [
             "dom",
             "dom.iterable",
             "esnext"
         ],
-        "baseUrl": "./src/",
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        },
         "allowJs": false,
         "skipLibCheck": true,
         "strict": true,

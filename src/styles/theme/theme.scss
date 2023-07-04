@@ -1,13 +1,17 @@
-@import "./fonts";
-@import "./colors";
+@import './fonts';
+@import './colors';
+
+/* * {
+	box-sizing: border-box;
+} */
 
 ::-moz-selection {
-  /* Code for Firefox */
-  color: gray;
-  background: $primary;
+	/* Code for Firefox */
+	color: gray;
+	background: $primary;
 }
 
 ::selection {
-  color: gray;
-  background: $primary;
+	color: gray;
+	background: $primary;
 }
