@@ -1,4 +1,5 @@
-import 'styles/globals.scss';
+import Navbar from '@components/navbar';
+import '@styles/globals.scss';
 
 export const metadata = {
 	title: 'Birthdayy | Dashboard',
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className="main">{children}</body>
+			<body>
+				<Navbar />
+				<div className="main container is-fluid">{children}</div>
+			</body>
 		</html>
 	);
 }
