@@ -6,12 +6,14 @@
     ],
     "ignorePatterns": [
         "dist/",
-        ".next/"
+        ".next/",
+        "node_modules/"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2021,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "tsconfig.json"
     },
     "rules": {
         "radix": [

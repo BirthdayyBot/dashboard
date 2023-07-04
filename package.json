@@ -1,48 +1,48 @@
 {
-  "name": "birthdayy.xyz-dashboard",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "dev-turbo": "next dev  --turbo",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@sapphire/eslint-config": "^4.4.2",
-    "@sapphire/prettier-config": "^1.4.5",
-    "@sapphire/ts-config": "^4.0.0",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "next": "13.4.7",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "description": "This is a dashboard for the Birthdayy Discord Bot.",
-  "main": "next.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BirthdayyBot/dashboard.git"
-  },
-  "prettier": "@sapphire/prettier-config",
-  "keywords": [
-    "bot-dashboard"
-  ],
-  "author": "nikolaischunk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/BirthdayyBot/dashboard/issues"
-  },
-  "homepage": "https://github.com/BirthdayyBot/dashboard#readme",
-  "devDependencies": {
-    "@types/node": "^20.3.3",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "bulma": "^0.9.4",
-    "sass": "^1.63.6",
-    "typescript": "^5.1.6",
-    "typescript-plugin-css-modules": "^5.0.1"
-  }
+	"name": "birthdayy.xyz-dashboard",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"dev-turbo": "next dev  --turbo",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@sapphire/eslint-config": "^4.4.2",
+		"@sapphire/prettier-config": "^1.4.5",
+		"@sapphire/ts-config": "^4.0.0",
+		"eslint": "8.43.0",
+		"eslint-config-next": "13.4.7",
+		"next": "13.4.7",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"description": "This is a dashboard for the Birthdayy Discord Bot.",
+	"main": "next.config.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BirthdayyBot/dashboard.git"
+	},
+	"prettier": "@sapphire/prettier-config",
+	"keywords": [
+		"bot-dashboard"
+	],
+	"author": "nikolaischunk",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/BirthdayyBot/dashboard/issues"
+	},
+	"homepage": "https://github.com/BirthdayyBot/dashboard#readme",
+	"devDependencies": {
+		"@types/node": "^20.3.3",
+		"@types/react": "^18.2.14",
+		"@types/react-dom": "^18.2.6",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"bulma": "^0.9.4",
+		"sass": "^1.63.6",
+		"typescript": "^5.1.6",
+		"typescript-plugin-css-modules": "^5.0.1"
+	}
 }
