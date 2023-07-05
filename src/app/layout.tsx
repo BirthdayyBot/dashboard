@@ -1,4 +1,5 @@
 import Navbar from '@components/navbar';
+import JotaiProvider from '@lib/provider/jotai';
 import '@styles/globals.scss';
 
 export const metadata = {
@@ -8,11 +9,13 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
-			<body>
-				<Navbar />
-				<div className="main container is-fluid">{children}</div>
-			</body>
-		</html>
+		<JotaiProvider>
+			<html lang="en">
+				<body>
+					<Navbar />
+					<div className="main container is-fluid">{children}</div>
+				</body>
+			</html>
+		</JotaiProvider>
 	);
 }
