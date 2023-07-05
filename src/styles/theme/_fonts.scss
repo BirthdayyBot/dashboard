@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind+Vadodara&family=Raleway:wght@400;800&family=Rubik:wght@500;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara&family=Raleway:wght@400;800&family=Rubik:wght@500;800&display=swap');
 
-$header-font: "Rubik", sans-serif;
-$sub-header-font: "Raleway", sans-serif;
-$body-font: "Hind Vadodara", sans-serif;
+$header-font: 'Rubik', sans-serif;
+$sub-header-font: 'Raleway', sans-serif;
+$body-font: 'Hind Vadodara', sans-serif;
 
 $family-primary: $body-font;
 $family-secondary: $header-font;
@@ -15,18 +15,18 @@ is-size-4,
 is-size-5,
 is-size-6,
 is-size-7 {
-  font-family: $header-font;
+	font-family: $header-font;
 }
 
 .is-family-title {
-  font-family: $header-font;
+	font-family: $header-font;
 }
 .is-family-sub-title {
-  font-family: $sub-header-font;
+	font-family: $sub-header-font;
 }
 .is-family-text {
-  font-family: $body-font;
+	font-family: $body-font;
 }
 .is-text {
-  font-family: $body-font;
+	font-family: $body-font;
 }

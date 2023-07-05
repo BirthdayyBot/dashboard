@@ -27,14 +27,14 @@ $highlight: #2c2f36;
 $danger: $secondary;
 
 .is-color-primary {
-  color: #78c2ad;
+	color: $primary;
 }
 .has-text-secondary {
-  color: $secondary;
+	color: $secondary;
 }
 .is-secondary {
-  background-color: $secondary !important;
-  color: $white !important;
+	background-color: $secondary !important;
+	color: $white !important;
 }
 
 /*
