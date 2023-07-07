@@ -1,12 +1,15 @@
 'use client';
 import { isActiveAtome } from '@lib/atoms';
+import { UrlSlugEnum } from '@lib/enum/url-slug.enum';
 import { useAtom } from 'jotai';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import NavbarDropdown from './dropdown';
 import NavbarItem from './item';
 
 export default function Navbar() {
 	const [isActive, setIsActive] = useAtom(isActiveAtome);
+	const { data: session } = useSession();
 	return (
 		<div className="navbarComponent">
 			<nav className="navbar has-shadow is-primary is-spaced mb-2" role="navigation" aria-label="main navigation">
@@ -34,14 +37,17 @@ export default function Navbar() {
 						<NavbarItem label="Home" url="/" />
 						<NavbarItem label="NavItem" url="#" />
 
-						<NavbarDropdown label="Dropdown">
-							<NavbarItem label="Dropdown" url="#" />
-							<NavbarItem label="Dropdown" url="#" />
-							<NavbarItem label="Dropdown" url="#" />
+						<NavbarDropdown label="Auth">
+							<NavbarItem label="Me" url="/auth-test/me" />
+							<NavbarItem label="Server" url="/auth-test/server" />
+							<NavbarItem label="Client" url="/auth-test/client" />
+							<NavbarItem label="Protected" url="/auth-test/protected" />
+							<NavbarItem label="Protected" url="/auth-test/redirect" />
 						</NavbarDropdown>
 					</div>
 
 					<div className="navbar-end">
+						{session ? 'authenticated' : 'not authenticated'}
 						<div className="navbar-item mr-3">
 							<div className="buttons are-medium">
 								<Link
@@ -53,9 +59,8 @@ export default function Navbar() {
 								</Link>
 
 								<Link
-									href="/invite"
+									href={UrlSlugEnum.LOGIN}
 									className={`button is-rounded is-strong ${isActive ? 'is-primary is-fullwidth' : 'is-white is-outlined'}`}
-									target="_blank"
 								>
 									Login
 								</Link>
