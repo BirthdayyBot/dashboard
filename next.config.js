@@ -15,9 +15,15 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'discord.com',
-				port: '',
-				pathname: '?'
+				hostname: 'discord.com'
+			},
+			{
+				protocol: 'https',
+				hostname: 'cdn.discordapp.com'
+			},
+			{
+				protocol: 'https',
+				hostname: 'bulma.io'
 			}
 		]
 	}

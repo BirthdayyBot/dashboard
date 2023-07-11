@@ -11,5 +11,5 @@ export default function ClientPage() {
 			redirect(`${UrlSlugEnum.LOGIN}?callbackUrl=/client`);
 		}
 	});
-	return <h1>{session?.user.discordId}</h1>;
+	return <h1>{session?.user.userId}</h1>;
 }

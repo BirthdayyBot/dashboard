@@ -17,5 +17,19 @@ export const authOptions: NextAuthOptions = {
 		brandColor: BRAND_COLOR,
 		colorScheme: 'auto',
 		logo: BIRTHDAYY_LOGO
+	},
+	callbacks: {
+		session: ({ session, token }) => {
+			if (session?.user) {
+				session.user.userId = token.sub;
+				session.user.username = token.name;
+				session.user.imageUrl = token.picture;
+			}
+			return session;
+		}
+	},
+	session: {
+		strategy: 'jwt',
+		maxAge: 3600 * 24 * 30 // 30 days
 	}
 };

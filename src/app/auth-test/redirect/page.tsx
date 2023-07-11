@@ -9,7 +9,7 @@ export default async function RedirectAuthExample() {
 	}
 	return (
 		<>
-			<h1>{session.user.discordId}</h1>{' '}
+			<h1>{session.user.userId}</h1>{' '}
 		</>
 	);
 }
