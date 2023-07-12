@@ -1,7 +1,7 @@
 import { signIn, signOut } from 'next-auth/react';
 
 function login() {
-	signIn().catch((err) => {
+	signIn('discord').catch((err) => {
 		console.log(err);
 	});
 }
