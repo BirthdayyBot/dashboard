@@ -1,65 +1,18 @@
 'use client';
+import LoginLogoutButton from '@components/button/signButton';
+import { ProfilePicture } from '@components/profile-picture';
 import { isActiveAtome } from '@lib/atoms';
 import { useAtom } from 'jotai';
-import { signIn, useSession } from 'next-auth/react';
-import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import NavbarDropdown from './dropdown';
 import NavbarItem from './item';
 
 export default function Navbar(): JSX.Element {
-	const [isActive, setIsActive] = useAtom(isActiveAtome);
+	const [isResponsiveActiv, setIsResponsiveActiv] = useAtom(isActiveAtome);
 	const { data: session } = useSession();
 	const isLoggedIn = session ? true : false;
 
-	const login = () => {
-		signIn().catch((err) => {
-			console.log(err);
-		});
-	};
-
-	const logout = () => {
-		signIn().catch((err) => {
-			console.log(err);
-		});
-	};
-
-	const LoginLogoutButton = () => {
-		if (isLoggedIn)
-			return (
-				<button
-					onClick={() => login()}
-					className={`button is-rounded is-strong ${isActive ? 'is-primary is-fullwidth' : 'is-white is-outlined'}`}
-				>
-					Logout
-				</button>
-			);
-		return (
-			<button
-				onClick={() => logout()}
-				className={`button is-rounded is-strong ${isActive ? 'is-primary is-fullwidth' : 'is-white is-outlined'}`}
-			>
-				Login
-			</button>
-		);
-	};
-
-	const DiscordAvatar = () => {
-		if (isLoggedIn) {
-			return (
-				<figure className="image is-square">
-					<Image
-						className="is-rounded"
-						src={session?.user?.imageUrl ?? 'https://bulma.io/images/placeholders/256x256.png'}
-						alt="Profile Picture"
-						width={128}
-						height={128}
-					/>
-				</figure>
-			);
-		}
-		return <></>;
-	};
 	return (
 		<div className="navbarComponent">
 			<nav className="navbar has-shadow is-primary is-spaced mb-2" role="navigation" aria-label="main navigation">
@@ -70,11 +23,11 @@ export default function Navbar(): JSX.Element {
 
 					<a
 						role="button"
-						className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
+						className={`navbar-burger burger ${isResponsiveActiv ? 'is-active' : ''}`}
 						aria-label="menu"
 						aria-expanded="false"
 						data-target="navbar-rollout"
-						onClick={() => setIsActive(!isActive)}
+						onClick={() => setIsResponsiveActiv(!isResponsiveActiv)}
 					>
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>
@@ -82,7 +35,7 @@ export default function Navbar(): JSX.Element {
 					</a>
 				</div>
 
-				<div id="navbar-rollout" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+				<div id="navbar-rollout" className={`navbar-menu ${isResponsiveActiv ? 'is-active' : ''}`}>
 					<div className="navbar-start">
 						<NavbarItem label="Home" url="/" />
 						<NavbarItem label="NavItem" url="#" />
@@ -99,19 +52,19 @@ export default function Navbar(): JSX.Element {
 					<div className="navbar-end">
 						{isLoggedIn ? 'authenticated' : 'not authenticated'}
 						<div className="navbar-item mr-3">
-							<DiscordAvatar />
+							<ProfilePicture size={64} />
 						</div>
 						<div className="navbar-item mr-3">
 							<div className="buttons are-medium">
 								<Link
 									href="/discord"
-									className={`button is-primary is-rounded is-strong ${isActive ? 'is-fullwidth is-outlined' : ''}`}
+									className={`button is-primary is-rounded is-strong ${isResponsiveActiv ? 'is-fullwidth is-outlined' : ''}`}
 									target="_blank"
 								>
 									Discord
 								</Link>
 
-								<LoginLogoutButton />
+								<LoginLogoutButton isLoggedIn={session ? true : false} isResponsive={isResponsiveActiv} />
 							</div>
 						</div>
 					</div>

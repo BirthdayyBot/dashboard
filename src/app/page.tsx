@@ -1,4 +1,5 @@
 import { BRAND_COLOR } from '@lib/environment';
+import TryoutPage from './tryout/page';
 
 export default function HomePage() {
 	return (
@@ -7,6 +8,8 @@ export default function HomePage() {
 			<button className="button is-danger ">Button</button>
 			{BRAND_COLOR}
 			{process.env.BRAND_COLOR}
+
+			<TryoutPage />
 		</main>
 	);
 }
