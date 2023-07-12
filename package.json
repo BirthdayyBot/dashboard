@@ -15,7 +15,7 @@
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^4.0.0",
 		"@skyra/env-utilities": "^1.2.1",
-		"eslint": "8.43.0",
+		"eslint": "8.44.0",
 		"eslint-config-next": "13.4.7",
 		"jotai": "^2.2.1",
 		"next": "13.4.7",
