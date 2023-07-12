@@ -4,7 +4,6 @@ import { ProfilePicture } from '@components/profile-picture';
 import { isActiveAtome } from '@lib/atoms';
 import { useAtom } from 'jotai';
 import { useSession } from 'next-auth/react';
-import Link from 'next/link';
 import NavbarDropdown from './dropdown';
 import NavbarItem from './item';
 
@@ -34,7 +33,6 @@ export default function Navbar(): JSX.Element {
 						<span aria-hidden="true"></span>
 					</a>
 				</div>
-
 				<div id="navbar-rollout" className={`navbar-menu ${isResponsiveActiv ? 'is-active' : ''}`}>
 					<div className="navbar-start">
 						<NavbarItem label="Home" url="/" />
@@ -49,23 +47,22 @@ export default function Navbar(): JSX.Element {
 						</NavbarDropdown>
 					</div>
 
-					<div className="navbar-end">
-						{isLoggedIn ? 'authenticated' : 'not authenticated'}
+					<div className="navbar-end columns is-mobile is-centered">
 						<div className="navbar-item mr-3">
-							<ProfilePicture size={64} />
-						</div>
-						<div className="navbar-item mr-3">
-							<div className="buttons are-medium">
-								<Link
+							<div className="buttons are-medium is-8">
+								{/* <Link
 									href="/discord"
 									className={`button is-primary is-rounded is-strong ${isResponsiveActiv ? 'is-fullwidth is-outlined' : ''}`}
 									target="_blank"
 								>
 									Discord
-								</Link>
+								</Link> */}
 
-								<LoginLogoutButton isLoggedIn={session ? true : false} isResponsive={isResponsiveActiv} />
+								<LoginLogoutButton isLoggedIn={isLoggedIn} isResponsive={isResponsiveActiv} />
 							</div>
+						</div>
+						<div className="column is-4 is-fullwidth">
+							<ProfilePicture avatarSize={isResponsiveActiv ? 48 : 64} size={256} />
 						</div>
 					</div>
 				</div>
