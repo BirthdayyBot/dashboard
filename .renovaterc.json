@@ -1,12 +1,7 @@
 {
 	"extends": ["config:recommended", "packages:eslint"],
-	"npm": {
-		"minimumReleaseAge": "3 days"
-	},
 	"automergeSchedule": ["before 4am"],
 	"schedule": ["every weekend"],
-	"matchPackageNames": ["@types/eslint", "babel-eslint", "@types/react"],
-	"matchPackagePrefixes": ["@typescript-eslint/", "eslint", "react", "prettier", "remark-lint", "standard"],
 	"packageRules": [
 		{
 			"groupName": "all non-major dependencies",
@@ -22,13 +17,16 @@
 			"matchPackagePatterns": ["/node$"]
 		},
 		{
-			"groupName": "react monorepo",
-			"matchPackageNames": ["@types/react", "@types/react-dom"]
+            "groupName": "react monorepo",
+			"matchPackageNames": ["@types/react", "@types/react-dom"],
+            "matchPackagePrefixes": ["react"]
 		},
 		{
-			"extends": "monorepo:nextjs",
-			"groupName": "nextjs monorepo",
-			"matchUpdateTypes": ["digest", "patch", "minor", "major"]
+            "groupName": "nextjs monorepo",
+			"extends": "monorepo:nextjs"
 		}
-	]
+	],
+    "npm": {
+        "minimumReleaseAge": "3 days"
+    }
 }
