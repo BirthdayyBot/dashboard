@@ -1,14 +1,12 @@
-import type { BooleanString, NumberString } from '@skyra/env-utilities';
-
-declare module '@skyra/env-utilities' {
-	interface Env {
+declare namespace NodeJS {
+	export interface ProcessEnv {
 		// Environment
 		NODE_ENV: 'development' | 'production';
 		APP_ENV: 'dev' | 'tst' | 'prd';
-		DEBUG: BooleanString;
+		DEBUG: 'true' | 'false';
 
 		// Discord
-		DISCORD_CLIENT_ID: NumberString;
+		DISCORD_CLIENT_ID: string;
 		DISCORD_CLIENT_SECRET: string;
 
 		// Webpage
