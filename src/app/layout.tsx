@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<JotaiProvider>
 			<AuthProvider>
-				<html lang="en">
+				<html lang="en" data-theme="birthdayy">
 					<body>
 						<Navbar />
 						<div className="main container is-fluid">{children}</div>
