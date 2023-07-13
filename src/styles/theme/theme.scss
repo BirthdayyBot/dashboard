@@ -1,10 +1,12 @@
 @import './colors';
 @import './fonts';
 
-/* * {
+* {
 	box-sizing: border-box;
-} */
-
+}
+body {
+	background-color: $dark;
+}
 ::-moz-selection {
 	/* Code for Firefox */
 	color: gray;
@@ -33,7 +35,7 @@
 	background-color: $secondary;
 }
 
-.is-logo {
+.is-logo-font {
 	font-family: $header-font;
 	font-weight: bold;
 	font-size: 2rem;

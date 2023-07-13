@@ -6,11 +6,12 @@ declare namespace NodeJS {
 		DEBUG: 'true' | 'false';
 
 		// Discord
-		DISCORD_CLIENT_ID: string;
 		DISCORD_CLIENT_SECRET: string;
+		NEXT_PUBLIC_DISCORD_CLIENT_ID: string;
+		NEXT_PUBLIC_DISCORD_BOT_NAME: string;
 
 		// Webpage
-		BRAND_COLOR: string;
-		BIRTHDAYY_LOGO: string;
+		NEXT_PUBLIC_BRAND_COLOR: string;
+		NEXT_PUBLIC_BIRTHDAYY_LOGO: string;
 	}
 }
