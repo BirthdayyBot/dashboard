@@ -10,6 +10,10 @@ export default function HomePage() {
 			{process.env.BRAND_COLOR}
 
 			<TryoutPage />
+			<p className="font-heading">Heading</p>
+			<p className="font-sub-heading">SubHEading</p>
+			<p className="font-body">Body</p>
+			<p className="">Normal</p>
 		</main>
 	);
 }

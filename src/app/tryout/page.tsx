@@ -1,3 +1,4 @@
+import ThemeChangeButtons from '@components/button/themeChange';
 import { ProfilePicture } from '@components/profile-picture';
 import { BIRTHDAYY_LOGO, DISCORD_BOT_NAME } from '@lib/environment';
 export default function TryoutPage(): JSX.Element {
@@ -11,6 +12,7 @@ export default function TryoutPage(): JSX.Element {
 			<ProfilePicture />
 			<h2>{BIRTHDAYY_LOGO}</h2>
 			<h1>{DISCORD_BOT_NAME}</h1>
+			<ThemeChangeButtons />
 		</>
 	);
 }
