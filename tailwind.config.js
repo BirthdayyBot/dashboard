@@ -11,6 +11,12 @@ const TailwindConfig = {
 				xl: '5rem',
 				'2xl': '6rem'
 			}
+		},
+		fontFamily: {
+			heading: ['Rubik'],
+			'sub-heading': ['Raleway', 'sans-serif'],
+			body: ['"Hind Vadodara"', 'sans-serif'],
+			sans: ['"Hind Vadodara"', 'sans-serif']
 		}
 	},
 	plugins: [require('@tailwindcss/typography'), require('daisyui')],

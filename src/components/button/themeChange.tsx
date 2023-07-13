@@ -18,13 +18,14 @@ const ThemeChangeButtons = () => {
 			<ThemeButton theme={'emerald'} />
 			<ThemeButton theme={'corporate'} />
 			<ThemeButton theme={'synthwave'} />
+			<ThemeButton theme={'winter'} />
 		</div>
 	);
 };
 
 const ThemeButton = ({ theme }: { theme: string }) => {
 	return (
-		<button className="btn w-32 rounded-full btn-primary" data-set-theme={theme} data-act-class="ACTIVECLASS">
+		<button className="btn w-32 btn-primary mr-1" data-set-theme={theme} data-act-class="ACTIVECLASS">
 			{theme}
 		</button>
 	);
