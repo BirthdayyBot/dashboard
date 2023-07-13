@@ -19,7 +19,7 @@ export default function Navbar(): JSX.Element {
 		<div className="navbarComponent">
 			<nav className="navbar bg-base-100">
 				<div className="navbar-start">
-					<Image src={BIRTHDAYY_LOGO} width={64} height={64} alt="Birthdayy Logo" />
+					<Image src={BIRTHDAYY_LOGO} width={64} height={64} alt="Birthdayy Logo" quality={100} />
 					<a className="btn btn-ghost text-xl uppercase font-bold font-heading">{DISCORD_BOT_NAME}</a>
 				</div>
 				<div className="navbar-center">Middle</div>
