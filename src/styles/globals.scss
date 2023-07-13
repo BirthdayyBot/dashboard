@@ -2,4 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-// https://tailwindcss.com/docs/using-with-preprocessors
+@import './theme/components/buttons.css'; // https://tailwindcss.com/docs/using-with-preprocessors

@@ -1,9 +1,19 @@
 /** @type {import('tailwindcss').Config}*/
 const TailwindConfig = {
 	theme: {
-		extend: {}
+		extend: {},
+		container: {
+			center: true,
+			padding: {
+				DEFAULT: '1rem',
+				sm: '2rem',
+				lg: '4rem',
+				xl: '5rem',
+				'2xl': '6rem'
+			}
+		}
 	},
-	plugins: [require('daisyui')],
+	plugins: [require('@tailwindcss/typography'), require('daisyui')],
 	content: ['./src/**/*.{html,ts,tsx}'],
 	daisyui: {
 		themes: [
@@ -38,15 +48,11 @@ const TailwindConfig = {
 			'lofi',
 			'pastel',
 			'fantasy',
-			'wireframe',
-			'black',
 			'luxury',
 			'dracula',
 			'cmyk',
 			'autumn',
 			'business',
-			'acid',
-			'lemonade',
 			'night',
 			'coffee',
 			'winter'
