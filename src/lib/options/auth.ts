@@ -7,7 +7,7 @@ export const authOptions: NextAuthOptions = {
 	// https://next-auth.js.org/configuration/providers/oauth
 	providers: [
 		DiscordProvider({
-			clientId: process.env.DISCORD_CLIENT_ID,
+			clientId: process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID,
 			clientSecret: process.env.DISCORD_CLIENT_SECRET,
 			authorization: { params: { scope: scopes } }
 		})
