@@ -28,6 +28,10 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'bulma.io'
+			},
+			{
+				protocol: 'https',
+				hostname: 'files.schunk.dev'
 			}
 		]
 	}
