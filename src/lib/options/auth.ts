@@ -3,7 +3,7 @@ import type { NextAuthOptions, Secrets } from 'next-auth';
 import type { DefaultJWT } from 'next-auth/jwt';
 import DiscordProvider, { type DiscordProfile } from 'next-auth/providers/discord';
 
-const scopes = ['identify', 'guilds'].join(' ');
+const scopes = ['identify', 'guilds', 'guilds.members.read', 'applications.commands.permissions.update'].join(' ');
 export const authOptions: NextAuthOptions = {
 	// https://next-auth.js.org/configuration/providers/oauth
 	providers: [
