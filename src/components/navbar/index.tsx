@@ -53,7 +53,7 @@ export default function Navbar(): JSX.Element {
 								<a>Settings</a>
 							</li>
 							<li>
-								<LoginLogoutButton isLoggedIn />
+								<LoginLogoutButton isLoggedIn={isLoggedIn} />
 							</li>
 						</ul>
 					</div>

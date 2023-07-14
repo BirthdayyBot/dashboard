@@ -13,6 +13,7 @@ export const authOptions: NextAuthOptions = {
 			authorization: { params: { scope: scopes } }
 		})
 	],
+	debug: process.env.DEBUG === 'true',
 	pages: {},
 	theme: {
 		brandColor: BRAND_COLOR,
@@ -43,7 +44,7 @@ export const authOptions: NextAuthOptions = {
 			if (profile) {
 				token.profile = profile;
 			}
-			console.log('jwt ~ token:', token);
+			// console.log('jwt ~ token:', token);
 			console.log('jwt ~ user:', user);
 			console.log('jwt ~ profile:', profile);
 			console.log('jwt ~ account:', account);

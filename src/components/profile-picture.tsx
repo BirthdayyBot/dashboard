@@ -14,7 +14,7 @@ export const ProfilePicture = ({
 		<figure className={`image is-${avatarSize}x${avatarSize}`}>
 			<Image
 				className="is-rounded"
-				src={session?.user.imageUrl ? `${session?.user?.imageUrl}?size=${size}&q=100` : 'https://bulma.io/images/placeholders/256x256.png'}
+				src={session?.user.imageUrl ? `${session?.user?.imageUrl}?size=${size}&q=100` : '/me.png'}
 				alt="Profile Picture"
 				width={size}
 				height={size}
