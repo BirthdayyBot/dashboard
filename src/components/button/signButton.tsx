@@ -12,21 +12,15 @@ function logout() {
 	});
 }
 
-const LoginLogoutButton = ({ isLoggedIn, isResponsive }: { isResponsive: boolean; isLoggedIn: boolean }): JSX.Element => {
+const LoginLogoutButton = ({ isLoggedIn }: { isLoggedIn: boolean }): JSX.Element => {
 	if (isLoggedIn)
 		return (
-			<button
-				onClick={() => login()}
-				className={`button is-rounded is-strong ${isResponsive ? 'is-primary is-fullwidth' : 'is-white is-outlined'}`}
-			>
+			<button onClick={() => login()} className={`btn is-rounded is-strong `}>
 				Logout
 			</button>
 		);
 	return (
-		<button
-			onClick={() => logout()}
-			className={`button is-rounded is-strong ${isResponsive ? 'is-primary is-fullwidth' : 'is-white is-outlined'}`}
-		>
+		<button onClick={() => logout()} className={`btn is-rounded is-strong $`}>
 			Login
 		</button>
 	);

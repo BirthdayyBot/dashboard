@@ -28,7 +28,7 @@ const TailwindConfig = {
 					primary: '#78c2ad',
 					secondary: '#f2969a',
 					accent: '#2dd4bf',
-					neutral: '#4b5563',
+					neutral: '#252a31',
 					'base-100': '#1D232A',
 					info: '#0ea5e9',
 					success: '#4ade80',
