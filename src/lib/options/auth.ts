@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
 	},
 	callbacks: {
 		session: ({ session, token }) => {
-			console.log('session ~ token:', token);
+			// console.log('session ~ token:', token);
 			if (session?.user) {
 				session.user.userId = token.sub;
 				session.user.username = token.name;
@@ -38,6 +38,7 @@ export const authOptions: NextAuthOptions = {
 				token.secrets = {
 					accessToken: account.access_token,
 					refreshToken: account.refresh_token,
+					tokenType: account.token_type,
 					expires_at: account.expires_at
 				};
 			}
@@ -45,9 +46,9 @@ export const authOptions: NextAuthOptions = {
 				token.profile = profile;
 			}
 			// console.log('jwt ~ token:', token);
-			console.log('jwt ~ user:', user);
-			console.log('jwt ~ profile:', profile);
-			console.log('jwt ~ account:', account);
+			// console.log('jwt ~ user:', user);
+			// console.log('jwt ~ profile:', profile);
+			// console.log('jwt ~ account:', account);
 			return token;
 		}
 	},

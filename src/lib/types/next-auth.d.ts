@@ -14,9 +14,10 @@ declare module 'next-auth' {
 	}
 
 	export interface Secrets {
-		accessToken: string | undefined;
-		refreshToken: string | undefined;
-		expires_at: number | undefined;
+		accessToken: string;
+		refreshToken: string;
+		tokenType: string;
+		expires_at?: number;
 	}
 	// interface Profile {
 	// 	userId: string;
@@ -30,8 +31,8 @@ declare module 'next-auth' {
 	// }
 
 	interface User {
-		userId: string | undefined;
-		username: string | null | undefined;
-		imageUrl: string | null | undefined;
+		userId?: string;
+		username?: string | null;
+		imageUrl?: string | null;
 	}
 }
