@@ -1,5 +1,6 @@
 {
 	"name": "birthdayy.xyz-dashboard",
+	"description": "This is a dashboard for the Birthdayy Discord Bot.",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -29,7 +30,6 @@
 		"react-icons": "^4.10.1",
 		"theme-change": "^2.5.0"
 	},
-	"description": "This is a dashboard for the Birthdayy Discord Bot.",
 	"main": "next.config.js",
 	"repository": {
 		"type": "git",
