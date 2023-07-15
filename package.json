@@ -11,10 +11,13 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@discordjs/rest": "^1.7.1",
 		"@sapphire/eslint-config": "^4.4.2",
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^4.0.0",
+		"discord-api-types": "^0.37.48",
 		"discord-oauth2": "^2.11.0",
+		"discord.js": "^14.11.0",
 		"eslint": "8.44.0",
 		"eslint-config-next": "13.4.9",
 		"jotai": "^2.2.1",
@@ -51,7 +54,6 @@
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"autoprefixer": "^10.4.14",
 		"daisyui": "^3.2.1",
-		"discord-api-types": "^0.37.48",
 		"postcss": "^8.4.25",
 		"postcss-import": "^15.1.0",
 		"sass": "^1.63.6",

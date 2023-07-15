@@ -33,7 +33,7 @@
             }
         ],
         "skipLibCheck": true,
-        "target": "ES6",
+        "target": "ESNext",
         "typeRoots": [
             "./node_modules/@types",
             "./types",
