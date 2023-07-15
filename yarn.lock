@@ -57,6 +57,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discordjs/core@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@discordjs/core@npm:0.6.0"
+  dependencies:
+    "@discordjs/rest": ^1.7.1
+    "@discordjs/util": ^0.3.0
+    "@discordjs/ws": ^0.8.2
+    "@sapphire/snowflake": ^3.4.2
+    "@vladfrangu/async_event_emitter": ^2.2.1
+    discord-api-types: ^0.37.41
+  checksum: e2bedc8f2ea0ba0fb282c1a66fa2c0ec28a3161494df81ce8bf8cf2ee814d057dfce9228e8e2074cfbbea61a475e144cd5138111636dd615d219deb75c33951e
+  languageName: node
+  linkType: hard
+
 "@discordjs/formatters@npm:^0.3.1":
   version: 0.3.1
   resolution: "@discordjs/formatters@npm:0.3.1"
@@ -89,7 +103,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/ws@npm:^0.8.3":
+"@discordjs/ws@npm:^0.8.2, @discordjs/ws@npm:^0.8.3":
   version: 0.8.3
   resolution: "@discordjs/ws@npm:0.8.3"
   dependencies:
@@ -1113,6 +1127,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "birthdayy.xyz-dashboard@workspace:."
   dependencies:
+    "@discordjs/core": ^0.6.0
     "@discordjs/rest": ^1.7.1
     "@sapphire/eslint-config": ^4.4.2
     "@sapphire/prettier-config": ^1.4.5
