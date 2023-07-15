@@ -8,6 +8,7 @@ declare namespace NodeJS {
 
 		// Discord
 		DISCORD_CLIENT_SECRET: string;
+		DISCORD_BOT_TOKEN: string;
 		NEXT_PUBLIC_DISCORD_CLIENT_ID: string;
 		NEXT_PUBLIC_DISCORD_BOT_NAME: string;
 
