@@ -1,6 +1,7 @@
 {
     "extends": "@sapphire/ts-config",
     "compilerOptions": {
+        "moduleResolution": "Bundler",
         "allowJs": false,
         "baseUrl": ".",
         "forceConsistentCasingInFileNames": true,
@@ -49,5 +50,5 @@
         ".next/types/**/*.ts",
         "next-env.d.ts",
         "next.config.js"
-    ]
+    ],
 }
