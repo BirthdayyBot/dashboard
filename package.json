@@ -14,12 +14,12 @@
 	"dependencies": {
 		"@discordjs/core": "^0.6.0",
 		"@discordjs/rest": "^1.7.1",
+		"@sapphire/bitfield": "^1.2.0",
 		"@sapphire/eslint-config": "^4.4.2",
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^4.0.0",
 		"discord-api-types": "^0.37.48",
 		"discord-oauth2": "^2.11.0",
-		"discord.js": "^14.11.0",
 		"eslint": "8.44.0",
 		"eslint-config-next": "13.4.9",
 		"jotai": "^2.2.1",

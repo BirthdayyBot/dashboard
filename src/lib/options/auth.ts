@@ -33,7 +33,7 @@ export const authOptions: NextAuthOptions = {
 			session.secrets = token.secrets as Secrets;
 			return session;
 		},
-		jwt({ token, user, profile, account }): DefaultJWT {
+		jwt({ token, profile, account }): DefaultJWT {
 			if (account) {
 				token.secrets = {
 					accessToken: account.access_token,
@@ -46,7 +46,6 @@ export const authOptions: NextAuthOptions = {
 				token.profile = profile;
 			}
 			// console.log('jwt ~ token:', token);
-			// console.log('jwt ~ user:', user);
 			// console.log('jwt ~ profile:', profile);
 			// console.log('jwt ~ account:', account);
 			return token;

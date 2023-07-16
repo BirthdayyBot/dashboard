@@ -1,6 +1,7 @@
 import { getUserGuilds } from '@lib/utils/oauth';
 import { getServerSession } from '@lib/utils/serverSession';
-import { PermissionsBitField } from 'discord.js';
+import { BitField, enumToObject } from '@sapphire/bitfield';
+import { PermissionFlagsBits } from 'discord-api-types/v10';
 
 export default async function GuildsPage() {
 	const session = await getServerSession();
@@ -11,8 +12,9 @@ export default async function GuildsPage() {
 	const guildsWithManagePermissions = guilds.filter((guild) => {
 		if (!guild.permissions) return false;
 		const p: bigint = BigInt(guild.permissions);
-		const permissionField = new PermissionsBitField(p);
-		const hasManageGuild = permissionField.has('ManageGuild');
+		const PermissionsBitField = new BitField(enumToObject(PermissionFlagsBits));
+		const hasManageGuild =
+			PermissionsBitField.has(p, PermissionFlagsBits.Administrator) || PermissionsBitField.has(p, PermissionFlagsBits.ManageGuild);
 		console.log(`guildsWithManagePermissions ~ hasManageGuild [${guild.id}]: `, hasManageGuild);
 
 		return hasManageGuild;
