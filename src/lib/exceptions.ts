@@ -4,3 +4,12 @@ export class AuthRequiredError extends Error {
 		this.name = 'AuthRequiredError';
 	}
 }
+
+export class GuildNotFoundError extends Error {
+	guildId: string;
+	constructor(guildId: string, message = 'Guild not found.') {
+		super(message);
+		this.name = 'GuildNotFoundError';
+		this.guildId = guildId;
+	}
+}
