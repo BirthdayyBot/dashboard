@@ -29,11 +29,12 @@ const TailwindConfig = {
 					secondary: '#f2969a',
 					accent: '#2dd4bf',
 					neutral: '#252a31',
-					'base-100': '#1D232A',
+					'base-100': '#0E1015',
 					info: '#0ea5e9',
 					success: '#4ade80',
 					warning: '#f59e0b',
-					error: '#e9495c'
+					error: '#e9495c',
+					dark: '#1D232A'
 				}
 			},
 			'dark',
@@ -68,7 +69,7 @@ const TailwindConfig = {
 		styled: true, // include daisyUI colors and design decisions for all components
 		utils: true, // adds responsive and modifier utility classes
 		prefix: '', // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-		logs: true // Shows info about daisyUI version and used config in the console when building your CSS
+		logs: false // Shows info about daisyUI version and used config in the console when building your CSS
 	}
 };
 
