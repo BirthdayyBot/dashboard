@@ -5,6 +5,7 @@ declare namespace NodeJS {
 		APP_ENV: 'dev' | 'tst' | 'prd';
 		DEBUG: 'true' | 'false';
 		BASE_URL: string;
+		USE_MOCK_DATA: 'true' | 'false';
 
 		// Discord
 		DISCORD_CLIENT_SECRET: string;
