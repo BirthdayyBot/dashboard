@@ -4,6 +4,7 @@ import { ArrowDropDownIcon } from '@components/icons';
 import { BIRTHDAYY_LOGO, DISCORD_BOT_NAME } from '@lib/environment';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 /*
 ressources;
@@ -24,7 +25,22 @@ export default function Navbar(): JSX.Element {
 					<Image src={BIRTHDAYY_LOGO} width={64} height={64} alt="Birthdayy Logo" quality={100} />
 					<a className="btn btn-ghost text-xl uppercase font-bold font-heading">{DISCORD_BOT_NAME}</a>
 				</div>
-				<div className="navbar-center">Middle</div>
+				<div className="navbar-center">
+					<div className="links">
+						<Link href="/" className="mr-1 btn">
+							Home
+						</Link>
+						<Link href="/guilds" className="mr-1 btn">
+							Guilds
+						</Link>
+						<Link href="/guild/980559116076470272" className="mr-1 btn">
+							Birthdayy Testing
+						</Link>
+						<Link href="/guild/980559116076470270" className="mr-1 btn">
+							Not Found
+						</Link>
+					</div>
+				</div>
 				<div className="navbar-end">
 					<div className="mr-3">{isLoggedIn ? 'Logged in' : 'Not logged in'}</div>
 					<p className="color-dark">
