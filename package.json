@@ -5,6 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dd": "doppler run yarn dev",
+		"ddd": "doppler run yarn dev-turbo",
 		"dev": "next dev",
 		"dev-turbo": "next dev  --turbo",
 		"build": "next build",
