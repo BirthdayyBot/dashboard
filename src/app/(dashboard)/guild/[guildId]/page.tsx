@@ -1,5 +1,5 @@
 import { GuildNotFoundError } from '@lib/exceptions';
-import { prisma } from '@lib/prisma';
+import { guild } from '@lib/utils/db';
 import { getGuildInfo } from '@lib/utils/discord';
 import type { Metadata, ResolvingMetadata } from 'next';
 
@@ -18,7 +18,8 @@ type GetGuildDetailsOptions =
 export async function generateMetadata({ params }: GuildDetailPageProps, parent: ResolvingMetadata): Promise<Metadata> {
 	const { discordData } = await getGuildDetails(params.guildId, { discord: true, database: false });
 	return {
-		title: `${discordData?.name ?? 'Guild'} | Birthdayy`
+		title: `${discordData?.name ?? 'Guild'} | Birthdayy`,
+		description: (await parent).description
 	};
 }
 
@@ -32,11 +33,7 @@ async function getGuildDetails(guildId: string, options?: GetGuildDetailsOptions
 		discordData = await getGuildInfo(guildId);
 	}
 	if (isDatabaseRequested) {
-		databaseData = await prisma.guild.findUnique({
-			where: {
-				guildId
-			}
-		});
+		databaseData = await guild.get.GuildById(guildId);
 	}
 	return {
 		discordData,
