@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 export default function GuildDetailErrorPage({ error, reset }: { error: Error | GuildNotFoundError; reset: () => void }) {
 	// get guildId from params. example url is /guild/1234567890
 	const { guildId } = useParams();
-
+	console.error(error);
 	return (
 		<div>
 			Guild not found: {guildId} <br />
