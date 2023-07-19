@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@discordjs/core": "^0.6.0",
 		"@discordjs/rest": "^1.7.1",
+		"@prisma/client": "^5.0.0",
 		"@sapphire/bitfield": "^1.2.0",
 		"@sapphire/eslint-config": "^4.4.2",
 		"@sapphire/prettier-config": "^1.4.5",
