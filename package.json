@@ -20,6 +20,7 @@
 		"@sapphire/eslint-config": "^4.4.2",
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^4.0.0",
+		"dayjs": "^1.11.9",
 		"discord-api-types": "^0.37.48",
 		"discord-oauth2": "^2.11.0",
 		"eslint": "8.44.0",
