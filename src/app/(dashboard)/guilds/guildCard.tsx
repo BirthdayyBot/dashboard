@@ -1,27 +1,29 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 function GuildDetailCard({ guild }: GuildDetailCardProps) {
 	return (
-		<div className="GuildDetailCard">
-			<div className="ex-2 mt-4">
-				<>
-					<div className="grid-item mb-4 mx-auto">
-						<div className="cardbg-base-100 text-center">
+		<div className="GuildDetailCard" key={guild.id}>
+			<div className="grid-item mx-auto">
+				<Link href={`/guild/${guild.id}`}>
+					<div className="card card-compact">
+						<div className="bg-base-100 text-center">
 							<Image
 								src={`https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`}
 								alt={`${guild.name} Server Icon`}
-								className="rounded-xl mx-auto grayscale-8"
+								className={`rounded-xl mx-auto border-2 border-primary bg-transparent`} /*  ${guild.isBotAdded ? ' border-primary' : ' border-red-500 grayscale'} */
 								width={128}
 								height={128}
 							/>
 						</div>
+
 						<div className="card-body">
-							<div className="card-title">
+							<div className="card-title text-center">
 								<p className="  ">{guild.name}</p>
 							</div>
 						</div>
 					</div>
-				</>
+				</Link>
 			</div>
 		</div>
 	);
