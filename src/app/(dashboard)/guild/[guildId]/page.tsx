@@ -1,20 +1,24 @@
-import type { DiscordAPIError } from '@discordjs/rest';
 import { GuildNotFoundError } from '@lib/exceptions';
 import { getGuildInfo } from '@lib/utils/discord';
 
 export default async function GuildDetailPage({ params }: { params: { guildId: string } }) {
-	const guildInfos = await getGuildInfo(params.guildId).catch((error: DiscordAPIError) => {
-		console.error(error);
-		if (error.code === 10004) {
-			throw new GuildNotFoundError(params.guildId);
+	try {
+		const guildInfos = await getGuildInfo(params.guildId);
+		return (
+			<div>
+				My Guild: {params.guildId} <br />
+				{JSON.stringify(guildInfos, null, 2)}
+			</div>
+		);
+	} catch (error: any) {
+		if (error instanceof GuildNotFoundError) {
+			return (
+				<div>
+					Guild not found: {error.guildId} <br />
+				</div>
+			);
 		}
-		throw error;
-	});
 
-	return (
-		<div>
-			My Guild: {params.guildId} <br />
-			{JSON.stringify(guildInfos, null, 2)}
-		</div>
-	);
+		return <div>Error: {error.message}</div>;
+	}
 }

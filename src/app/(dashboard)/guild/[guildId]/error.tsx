@@ -1,29 +1,24 @@
 'use client'; // Error components must be Client Components
 
 import { GuildNotFoundError } from '@lib/exceptions';
-import { useEffect } from 'react';
+import { useParams } from 'next/navigation';
 
-export default function GuildDetailErrorPage({ error, reset }: { error: Error; reset: () => void }) {
-	useEffect(() => {
-		// Log the error to an error reporting service
-		console.error(error);
-	}, [error]);
+export default function GuildDetailErrorPage({ error, reset }: { error: Error | GuildNotFoundError; reset: () => void }) {
+	// get guildId from params. example url is /guild/1234567890
+	const { guildId } = useParams();
 
-	if (error instanceof GuildNotFoundError) {
-		return (
-			<div>
-				Guild not found: {/* params.guildId */} <br />
-				<button
-					onClick={
-						// Attempt to recover by trying to re-render the segment
-						() => reset()
-					}
-				>
-					Try again
-				</button>
-			</div>
-		);
-	}
-
-	return <div>DISCORD API ERROR</div>;
+	return (
+		<div>
+			Guild not found: {guildId} <br />
+			<button
+				className="btn btn-primary"
+				onClick={
+					// Attempt to recover by trying to re-render the segment
+					() => reset()
+				}
+			>
+				Try again
+			</button>
+		</div>
+	);
 }
