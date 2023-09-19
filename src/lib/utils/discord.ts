@@ -33,3 +33,13 @@ export async function getGuildChannels(guildId: string) {
 		}
 	});
 }
+
+export async function getGuildRoles(guildId: string) {
+	return api.guilds.getRoles(guildId).catch((error: Error) => {
+		if (error.message === '404: Not Found' || error.message === 'Unknown Guild') {
+			throw new GuildNotFoundError(guildId);
+		} else {
+			throw error;
+		}
+	});
+}

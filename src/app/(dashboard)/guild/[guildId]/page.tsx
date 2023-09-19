@@ -1,9 +1,10 @@
+import DiscordSelectionComponent from '@components/input/selectionComponent';
+import TimeZoneComponent from '@components/input/timeZone';
 import { guild } from '@lib/utils/db';
 import { getGuildInfo } from '@lib/utils/discord';
 import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
-import GuildComponent from './components';
 
 type GuildDetailPageProps = {
 	params: {
@@ -51,7 +52,7 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 	const { guildId } = params;
 	const { databaseData, discordData } = await getGuildDetails(guildId);
 
-	if (databaseData === null || discordData === null) {
+	if (!databaseData || !discordData) {
 		return (
 			<div>
 				Guild not found: {guildId} <br />
@@ -61,7 +62,9 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 	return (
 		<div>
 			My Guild: {guildId} <br />
-			<GuildComponent guildId={guildId} />
+			<DiscordSelectionComponent type="channel" guildId={guildId} label="Announcement Channel" id={databaseData.announcementChannel} />
+			<DiscordSelectionComponent type="role" guildId={guildId} label="Birthday Role" id={databaseData.birthdayRole} />
+			<TimeZoneComponent timezone={10} />
 			<br />
 			<br />
 			Database: {JSON.stringify(databaseData)}
