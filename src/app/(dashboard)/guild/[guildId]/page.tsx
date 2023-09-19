@@ -1,3 +1,5 @@
+import BirthdayMessageComponent from '@components/input/birthdayMessage';
+import PremiumDisplayComponent from '@components/input/premium';
 import DiscordSelectionComponent from '@components/input/selectionComponent';
 import TimeZoneComponent from '@components/input/timeZone';
 import { guild } from '@lib/utils/db';
@@ -65,6 +67,8 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 			<DiscordSelectionComponent type="channel" guildId={guildId} label="Announcement Channel" id={databaseData.announcementChannel} />
 			<DiscordSelectionComponent type="role" guildId={guildId} label="Birthday Role" id={databaseData.birthdayRole} />
 			<TimeZoneComponent timezone={10} />
+			<PremiumDisplayComponent isPremium={databaseData.premium} />
+			<BirthdayMessageComponent announcementMessage={databaseData.announcementMessage} isPremium={databaseData.premium} />
 			<br />
 			<br />
 			Database: {JSON.stringify(databaseData)}

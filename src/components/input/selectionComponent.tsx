@@ -25,7 +25,7 @@ export default async function DiscordSelectionComponent(params: DiscordSelection
 				<label className="label">
 					<span className="label-text">{params.label}</span>
 				</label>
-				<select className="select select-bordered">
+				<select className="select select-bordered ">
 					{/* onChange={(event) => console.log(event.target.value)} */}
 					{discordData.map((data) => {
 						const isActiveValue: boolean = data.id === params.id;
