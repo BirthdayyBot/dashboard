@@ -23,3 +23,13 @@ export async function isBotAdded(guildId: string): Promise<boolean> {
 
 	return (await api.guilds.get(guildId)) ? true : false;
 }
+
+export async function getGuildChannels(guildId: string) {
+	return api.guilds.getChannels(guildId).catch((error: Error) => {
+		if (error.message === '404: Not Found' || error.message === 'Unknown Guild') {
+			throw new GuildNotFoundError(guildId);
+		} else {
+			throw error;
+		}
+	});
+}

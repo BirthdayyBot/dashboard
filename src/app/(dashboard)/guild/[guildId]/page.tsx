@@ -3,6 +3,7 @@ import { getGuildInfo } from '@lib/utils/discord';
 import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
+import GuildComponent from './components';
 
 type GuildDetailPageProps = {
 	params: {
@@ -60,6 +61,7 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 	return (
 		<div>
 			My Guild: {guildId} <br />
+			<GuildComponent guildId={guildId} />
 			<br />
 			<br />
 			Database: {JSON.stringify(databaseData)}
