@@ -2,10 +2,17 @@ export default function TimeZoneComponent({ timezone }: { timezone: number }): J
 	return (
 		<div className="timeZoneComponent">
 			<div className="join">
-				<button className="btn join-item" disabled>
+				<button className="btn join-item btn-outline" disabled>
 					UTC
 				</button>
-				<input className="input input-bordered join-item" placeholder="Timezone" type="number" max={12} min={-11} defaultValue={timezone} />
+				<input
+					className="input input-bordered join-item w-full max-w-xs "
+					placeholder="Timezone"
+					type="number"
+					max={12}
+					min={-11}
+					defaultValue={timezone}
+				/>
 			</div>
 		</div>
 	);

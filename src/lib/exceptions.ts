@@ -13,3 +13,12 @@ export class GuildNotFoundError extends Error {
 		this.guildId = guildId;
 	}
 }
+
+export class ChannelNotFoundError extends Error {
+	public channelId: string;
+	constructor(channelId: string, message = 'Channel not found.') {
+		super(message);
+		this.name = 'ChannelNotFoundError';
+		this.channelId = channelId;
+	}
+}

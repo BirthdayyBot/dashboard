@@ -1,12 +1,9 @@
-import BirthdayMessageComponent from '@components/input/birthdayMessage';
-import PremiumDisplayComponent from '@components/input/premium';
-import DiscordSelectionComponent from '@components/input/selectionComponent';
-import TimeZoneComponent from '@components/input/timeZone';
 import { guild } from '@lib/utils/db';
 import { getGuildInfo } from '@lib/utils/discord';
 import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
+import ConfigScreen from './configScreen';
 
 type GuildDetailPageProps = {
 	params: {
@@ -64,11 +61,7 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 	return (
 		<div>
 			My Guild: {guildId} <br />
-			<DiscordSelectionComponent type="channel" guildId={guildId} label="Announcement Channel" id={databaseData.announcementChannel} />
-			<DiscordSelectionComponent type="role" guildId={guildId} label="Birthday Role" id={databaseData.birthdayRole} />
-			<TimeZoneComponent timezone={10} />
-			<PremiumDisplayComponent isPremium={databaseData.premium} />
-			<BirthdayMessageComponent announcementMessage={databaseData.announcementMessage} isPremium={databaseData.premium} />
+			<ConfigScreen guildId={guildId} discordData={discordData} databaseData={databaseData} />
 			<br />
 			<br />
 			Database: {JSON.stringify(databaseData)}

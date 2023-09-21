@@ -1,7 +1,7 @@
 import { API } from '@discordjs/core/http-only';
 import { REST } from '@discordjs/rest';
 import { USE_MOCK } from '@lib/environment';
-import { GuildNotFoundError } from '@lib/exceptions';
+import { ChannelNotFoundError, GuildNotFoundError } from '@lib/exceptions';
 import { GuildInfoMock } from '@lib/mock/guildInfo.mock';
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_BOT_TOKEN);
@@ -38,6 +38,16 @@ export async function getGuildRoles(guildId: string) {
 	return api.guilds.getRoles(guildId).catch((error: Error) => {
 		if (error.message === '404: Not Found' || error.message === 'Unknown Guild') {
 			throw new GuildNotFoundError(guildId);
+		} else {
+			throw error;
+		}
+	});
+}
+
+export async function getChannelData(channelId: string) {
+	return api.channels.get(channelId).catch((error: Error) => {
+		if (error.message === '404: Not Found' || error.message === 'Unknown Channel') {
+			throw new ChannelNotFoundError(channelId);
 		} else {
 			throw error;
 		}
