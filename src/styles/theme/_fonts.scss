@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara&family=Raleway:wght@400;800&family=Rubik:wght@500;800&display=swap');
-
-$header-font: 'Rubik', sans-serif;
-$sub-header-font: 'Raleway', sans-serif;
-$body-font: 'Hind Vadodara', sans-serif;
+$header-font: 'var(--font-rubik)', sans-serif;
+$sub-header-font: 'var(--font-raleway)', sans-serif;
+$body-font: 'var(--font-hind-vadodara)', sans-serif;
 
 $family-primary: $body-font;
 $family-secondary: $header-font;
