@@ -13,10 +13,10 @@ const TailwindConfig = {
 			}
 		},
 		fontFamily: {
-			heading: ['Rubik'],
-			'sub-heading': ['Raleway', 'sans-serif'],
-			body: ['"Hind Vadodara"', 'sans-serif'],
-			sans: ['"Hind Vadodara"', 'sans-serif']
+			heading: ['var(--font-rubik)', 'sans-serif'],
+			'sub-heading': ['var(--font-raleway)', 'sans-serif'],
+			body: ['var(--font-hind-vadodara)', 'sans-serif'],
+			sans: ['var(--font-hind-vadodara)', 'sans-serif']
 		}
 	},
 	plugins: [require('@tailwindcss/typography'), require('daisyui')],
