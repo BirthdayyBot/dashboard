@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@discordjs/core": "^0.6.0",
-		"@discordjs/rest": "^1.7.1",
+		"@discordjs/rest": "^2.0.0",
 		"@prisma/client": "latest",
 		"@sapphire/bitfield": "^1.2.0",
 		"@sapphire/eslint-config": "^5.0.0",
