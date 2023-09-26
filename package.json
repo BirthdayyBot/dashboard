@@ -14,7 +14,7 @@
 		"prisma-gen": "doppler run prisma generate"
 	},
 	"dependencies": {
-		"@discordjs/core": "^0.6.0",
+		"@discordjs/core": "^1.0.0",
 		"@discordjs/rest": "^1.7.1",
 		"@prisma/client": "latest",
 		"@sapphire/bitfield": "^1.2.0",
