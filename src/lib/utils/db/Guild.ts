@@ -46,7 +46,7 @@ export class Guild {
 					deletedBirthdays: birthdays.length,
 					deletedGuilds: guilds.length
 				}))
-				.catch((error: any) => {
+				.catch((error: Error) => {
 					console.error(`[Guild][DeleteByLastUpdated] ${JSON.stringify(error)}`);
 					return { deletedBirthdays: 0, deletedGuilds: 0 };
 				}),

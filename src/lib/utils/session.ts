@@ -10,6 +10,7 @@ export function getAccessToken(s?: Session | null): string | undefined {
 }
 
 export const getSession = () => {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const { data: session } = useSession();
 	return session;
 };

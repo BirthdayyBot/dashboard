@@ -1,5 +1,5 @@
 export class AuthRequiredError extends Error {
-	constructor(message = 'Authentication is required to access this page.') {
+	public constructor(message = 'Authentication is required to access this page.') {
 		super(message);
 		this.name = 'AuthRequiredError';
 	}
@@ -7,7 +7,7 @@ export class AuthRequiredError extends Error {
 
 export class GuildNotFoundError extends Error {
 	public guildId: string;
-	constructor(guildId: string, message = 'Guild not found.') {
+	public constructor(guildId: string, message = 'Guild not found.') {
 		super(message);
 		this.name = 'GuildNotFoundError';
 		this.guildId = guildId;
@@ -16,7 +16,7 @@ export class GuildNotFoundError extends Error {
 
 export class ChannelNotFoundError extends Error {
 	public channelId: string;
-	constructor(channelId: string, message = 'Channel not found.') {
+	public constructor(channelId: string, message = 'Channel not found.') {
 		super(message);
 		this.name = 'ChannelNotFoundError';
 		this.channelId = channelId;
