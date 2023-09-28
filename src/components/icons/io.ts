@@ -1,3 +1,3 @@
 import { IoMdMenu } from 'react-icons/io';
-
-export const IoMenuIcon: unknown = IoMdMenu;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+export const IoMenuIcon: any = IoMdMenu;

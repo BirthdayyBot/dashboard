@@ -1,4 +1,5 @@
 import { APIGuild } from 'discord-api-types/v10';
+import { PartialGuild } from 'discord-oauth2';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -31,7 +32,7 @@ function GuildDetailCard({ guild }: GuildDetailCardProps) {
 }
 
 interface GuildDetailCardProps {
-	guild: APIGuild;
+	guild: PartialGuild | APIGuild;
 }
 
 export default GuildDetailCard;
