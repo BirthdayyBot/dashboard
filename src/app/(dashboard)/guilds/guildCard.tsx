@@ -1,3 +1,4 @@
+import { APIGuild } from 'discord-api-types/v10';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,14 +31,7 @@ function GuildDetailCard({ guild }: GuildDetailCardProps) {
 }
 
 interface GuildDetailCardProps {
-	guild: {
-		id: string;
-		name: string;
-		icon: string;
-		owner: boolean;
-		permissions: string;
-		features: string[];
-	};
+	guild: APIGuild;
 }
 
 export default GuildDetailCard;

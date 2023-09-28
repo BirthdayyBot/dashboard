@@ -19,7 +19,7 @@ export async function getGuildInfo(guildId: string) {
 }
 
 export async function isBotAdded(guildId: string): Promise<boolean> {
-	//check if bot is added to guild
+	// check if bot is added to guild
 
 	return (await api.guilds.get(guildId)) ? true : false;
 }

@@ -5,11 +5,11 @@ import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
 import ConfigScreen from './configScreen';
 
-type GuildDetailPageProps = {
+interface GuildDetailPageProps {
 	params: {
 		guildId: string;
 	};
-};
+}
 
 type GetGuildDetailsOptions =
 	| {

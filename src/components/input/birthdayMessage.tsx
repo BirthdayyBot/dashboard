@@ -12,7 +12,7 @@ export default function BirthdayMessageComponent({
 					<span className="label-text">Birthday Announcement Message</span>
 				</label>
 
-				{!isPremium ? <div className="badge badge-outline badge-error">Premium Only</div> : null}
+				{isPremium ? null : <div className="badge badge-outline badge-error">Premium Only</div>}
 				<textarea
 					className="textarea textarea-bordered h-24"
 					placeholder="Birthday Message"

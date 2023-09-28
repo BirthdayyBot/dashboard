@@ -1,15 +1,15 @@
 import type { RESTGetAPIGuildChannelsResult, RESTGetAPIGuildRolesResult } from 'discord-api-types/v10';
 
-type DiscordSelectionComponentType = {
+interface DiscordSelectionComponentType {
 	type: 'channel' | 'role';
 	guildId: string;
 	label: string;
 	id: string | null;
 	data: RESTGetAPIGuildChannelsResult | RESTGetAPIGuildRolesResult;
-};
+}
 
-export default async function DiscordSelectionComponent(params: DiscordSelectionComponentType) {
-	const defaultOption = !params.id ? 'Select a channel' : params.id;
+export default function DiscordSelectionComponent(params: DiscordSelectionComponentType) {
+	const defaultOption = params.id ? params.id : 'Select a channel';
 	return (
 		<div className="DiscordSelectionComponent">
 			<div className="form-control w-full max-w-xs">

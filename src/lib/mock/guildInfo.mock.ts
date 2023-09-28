@@ -1,3 +1,4 @@
+import { RoleFlags } from '@discordjs/core/http-only';
 import { GuildFeature, GuildNSFWLevel, GuildSystemChannelFlags, type APIGuild } from 'discord-api-types/v10';
 
 export const GuildInfoMock: APIGuild = {
@@ -30,12 +31,13 @@ export const GuildInfoMock: APIGuild = {
 			managed: false,
 			mentionable: false,
 			icon: null,
-			unicode_emoji: null
+			unicode_emoji: null,
+			flags: RoleFlags.InPrompt
 		},
 		{
 			id: '980560581306232844',
 			name: 'Birthdayy',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '26930988772561',
 			position: 18,
 			color: 0,
@@ -49,7 +51,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1080819909317099541',
 			name: 'Birthdayy Dev',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '26913808903377',
 			position: 15,
 			color: 0,
@@ -63,7 +65,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086294468522684519',
 			name: 'ADMIN',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '8',
 			position: 19,
 			color: 15277667,
@@ -76,7 +78,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086294516262252584',
 			name: 'USER',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '2147484672',
 			position: 5,
 			color: 3066993,
@@ -89,7 +91,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086294746395332688',
 			name: 'BOT',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 4,
 			color: 3447003,
@@ -102,7 +104,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086295411150565406',
 			name: 'BirthdayyTest',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '26913808903377',
 			position: 17,
 			color: 0,
@@ -116,7 +118,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086295883735384207',
 			name: 'CUSTOM BOT',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 14,
 			color: 15105570,
@@ -129,7 +131,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086296093538656401',
 			name: 'Custom Bot',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '26913808903377',
 			position: 3,
 			color: 0,
@@ -143,7 +145,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086296225780875426',
 			name: 'PING ROLE',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 10,
 			color: 7419530,
@@ -156,7 +158,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086296294387089478',
 			name: 'BIRTHDAY CHILD',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 11,
 			color: 10181046,
@@ -169,7 +171,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086296413903786054',
 			name: 'bot',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 20,
 			color: 0,
@@ -182,7 +184,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086721259422883905',
 			name: 'BirthdayyBot Dev',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '8797636537392',
 			position: 16,
 			color: 0,
@@ -196,7 +198,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1086981135491399841',
 			name: 'VOTE',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 9,
 			color: 15844367,
@@ -209,7 +211,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1087065163452137544',
 			name: 'stray kids',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '8798239980791',
 			position: 2,
 			color: 0,
@@ -223,7 +225,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1092820381993287732',
 			name: 'MANAGE SERVER',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '32',
 			position: 7,
 			color: 0,
@@ -236,7 +238,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1092820794662457436',
 			name: 'MANAGER',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 6,
 			color: 8894573,
@@ -249,7 +251,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1092820919396859944',
 			name: 'MANAGE ROLES',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '268435456',
 			position: 8,
 			color: 0,
@@ -262,7 +264,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1103675986043736155',
 			name: 'PROD BOT',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 13,
 			color: 3447003,
@@ -275,7 +277,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1103676070697373796',
 			name: 'DEV BOT',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '0',
 			position: 12,
 			color: 3066993,
@@ -288,7 +290,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1111593814176571498',
 			name: 'NAYEON',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '525529836753',
 			position: 1,
 			color: 0,
@@ -302,7 +304,7 @@ export const GuildInfoMock: APIGuild = {
 		{
 			id: '1129786715108823127',
 			name: 'Util Swiizyy',
-
+			flags: RoleFlags.InPrompt,
 			permissions: '8',
 			position: 1,
 			color: 0,
