@@ -1,4 +1,6 @@
 import { BIRTHDAYY_LOGO, BRAND_COLOR, DISCORD_CLIENT_ID } from '@lib/environment';
+import { getManageableGuilds } from '@lib/utils/discord';
+import { getUserGuilds } from '@lib/utils/oauth';
 import type { NextAuthOptions, Secrets } from 'next-auth';
 import type { DefaultJWT } from 'next-auth/jwt';
 import DiscordProvider, { type DiscordProfile } from 'next-auth/providers/discord';
@@ -21,7 +23,7 @@ export const authOptions: NextAuthOptions = {
 		logo: BIRTHDAYY_LOGO
 	},
 	callbacks: {
-		session: ({ session, token }) => {
+		session: async ({ session, token }) => {
 			// console.log('session ~ token:', token);
 			if (session?.user) {
 				session.user.userId = token.sub;
@@ -31,6 +33,14 @@ export const authOptions: NextAuthOptions = {
 			// Somewhat hacky implementation
 			session.profile = token.profile as DiscordProfile;
 			session.secrets = token.secrets as Secrets;
+
+			// save guildIds to local storage
+			if (session.secrets.accessToken) {
+				const guilds = await getUserGuilds(session?.secrets.accessToken);
+				const managableGuilds = await getManageableGuilds(guilds);
+				session.guilds = managableGuilds.map((guild) => guild.id);
+			}
+
 			return session;
 		},
 		jwt({ token, profile, account }): DefaultJWT {

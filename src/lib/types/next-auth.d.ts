@@ -8,6 +8,7 @@ declare module 'next-auth' {
 		user: User;
 		profile: DiscordProfile;
 		secrets: Secrets;
+		guilds?: string[];
 	}
 	interface JWT {
 		secrets: string;

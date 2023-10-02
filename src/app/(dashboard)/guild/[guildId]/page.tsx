@@ -1,5 +1,6 @@
 import { guild } from '@lib/utils/db';
 import { getGuildInfo } from '@lib/utils/discord';
+import { getServerSession } from '@lib/utils/serverSession';
 import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
@@ -24,9 +25,7 @@ async function getGuildDetails(guildId: string, options?: GetGuildDetailsOptions
 	let discordData: APIGuild | null | undefined = undefined;
 	let databaseData: Guild | null | undefined = undefined;
 	if (isDiscordRequested) {
-		discordData = await getGuildInfo(guildId).catch(() => {
-			return null;
-		});
+		discordData = await getGuildInfo(guildId);
 	}
 	if (isDatabaseRequested && discordData !== null) {
 		databaseData = await guild.get.GuildById(guildId).catch(() => {
@@ -50,7 +49,7 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 	// TODO: #11 Validate that User can access guilds configuration
 	const { guildId } = params;
 	const { databaseData, discordData } = await getGuildDetails(guildId);
-
+	const session = await getServerSession();
 	if (!databaseData || !discordData) {
 		return (
 			<div>
@@ -58,6 +57,7 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 			</div>
 		);
 	}
+
 	return (
 		<div>
 			My Guild: {guildId} <br />
@@ -68,6 +68,9 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 			<br />
 			<br />
 			Discord: {JSON.stringify(discordData)}
+			<br />
+			<br />
+			Session Guilds: {JSON.stringify(session?.guilds)}
 		</div>
 	);
 }
