@@ -78,3 +78,18 @@ export async function getManageableGuilds(guilds?: PartialGuild[] | APIGuild[]) 
 	});
 	return guildsWithManagePermission;
 }
+
+export async function isGuildManageable(guildId: string) {
+	const session = await getServerSession();
+	if (!session) throw new AuthRequiredError();
+	const guilds = await getUserGuilds(session.secrets.accessToken);
+	const guild = guilds.find((guild) => guild.id === guildId);
+	if (!guild) throw new GuildNotFoundError(guildId);
+	if (!guild.permissions) return false;
+	const p: bigint = BigInt(guild.permissions);
+	const PermissionsBitField = new BitField(enumToObject(PermissionFlagsBits));
+	const hasManageGuild =
+		PermissionsBitField.has(p, PermissionFlagsBits.Administrator) || PermissionsBitField.has(p, PermissionFlagsBits.ManageGuild);
+
+	return hasManageGuild;
+}
