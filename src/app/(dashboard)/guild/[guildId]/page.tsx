@@ -5,6 +5,7 @@ import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
 import ConfigScreen from './configScreen';
+import NotYetInvitedComponent from './notInvited';
 
 interface GuildDetailPageProps {
 	params: {
@@ -60,12 +61,14 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 		);
 	}
 	const { databaseData, discordData } = await getGuildDetails(guildId);
+
+	databaseData ?? console.log('databaseData does not exist');
+	discordData ?? console.log('discordData does not exist');
+	{
+		/* TODO: Show guild details from session */
+	}
 	if (!databaseData || !discordData) {
-		return (
-			<div>
-				Guild not found: {guildId} <br />
-			</div>
-		);
+		return <NotYetInvitedComponent guildId={guildId} />;
 	}
 
 	return (
