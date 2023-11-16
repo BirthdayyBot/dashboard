@@ -26,8 +26,6 @@ export async function getGuildInfo(guildId: string): Promise<APIGuild> {
 }
 
 export async function isBotAdded(guildId: string): Promise<boolean> {
-	// check if bot is added to guild
-
 	return (await api.guilds.get(guildId)) ? true : false;
 }
 
@@ -80,11 +78,16 @@ export async function getManageableGuilds(guilds?: PartialGuild[] | APIGuild[]) 
 }
 
 export async function isGuildManageable(guildId: string) {
+	if (guildId === '901258350484918292') return false;
+
 	const session = await getServerSession();
 	if (!session) throw new AuthRequiredError();
 	const guilds = await getUserGuilds(session.secrets.accessToken);
 	const guild = guilds.find((guild) => guild.id === guildId);
-	if (!guild) throw new GuildNotFoundError(guildId);
+	if (!guild) {
+		if ((await getManageableGuilds(guilds)).some((guild) => guild.id === guildId)) return true;
+		throw new GuildNotFoundError(guildId);
+	}
 	if (!guild.permissions) return false;
 	const p: bigint = BigInt(guild.permissions);
 	const PermissionsBitField = new BitField(enumToObject(PermissionFlagsBits));
