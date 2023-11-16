@@ -11,6 +11,15 @@ const nextConfig = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')]
 	},
+	async redirects() {
+		return [
+			{
+				source: '/invite',
+				destination: 'https://invite.birthdayy.xyz',
+				permanent: true
+			}
+		];
+	},
 	images: {
 		remotePatterns: [
 			{
