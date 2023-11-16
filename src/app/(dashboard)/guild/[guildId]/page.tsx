@@ -1,5 +1,5 @@
 import { guild } from '@lib/utils/db';
-import { getGuildInfo } from '@lib/utils/discord';
+import { getGuildInfo, isGuildManageable } from '@lib/utils/discord';
 import { getServerSession } from '@lib/utils/serverSession';
 import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
@@ -48,8 +48,18 @@ export async function generateMetadata({ params }: GuildDetailPageProps, parent:
 export default async function GuildDetailPage({ params }: GuildDetailPageProps) {
 	// TODO: #11 Validate that User can access guilds configuration
 	const { guildId } = params;
-	const { databaseData, discordData } = await getGuildDetails(guildId);
 	const session = await getServerSession();
+	const gm = await isGuildManageable(guildId);
+	if (!gm) {
+		console.log('no access');
+		return (
+			<div className="noAccess">
+				You do not have access to this guild {guildId}
+				<a href="/guilds">Back to Overview</a>
+			</div>
+		);
+	}
+	const { databaseData, discordData } = await getGuildDetails(guildId);
 	if (!databaseData || !discordData) {
 		return (
 			<div>
