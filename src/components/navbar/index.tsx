@@ -39,6 +39,9 @@ export default function Navbar(): JSX.Element {
 						<Link href="/guild/766707453994729532" className="mr-1 btn">
 							Chilli HQ
 						</Link>
+						<Link href="/guild/525035884375048192" className="mr-1 btn">
+							Not Added
+						</Link>
 						<Link href="/guild/901258350484918292" className="mr-1 btn">
 							No Access
 						</Link>
