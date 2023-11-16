@@ -36,12 +36,7 @@ export default function DiscordSelectionComponent(params: DiscordSelectionCompon
 					<span className="label-text font-sub-heading">{params.label}</span>
 				</label>
 				<div className="join">
-					<select
-						className="select select-bordered join-item"
-						defaultValue="Select a channel"
-						value={selection}
-						onChange={(event) => handleSelectionChange(event)}
-					>
+					<select className="select select-bordered join-item" value={selection} onChange={(event) => handleSelectionChange(event)}>
 						<option value="" disabled>
 							Select a {params.type}
 						</option>
