@@ -1068,7 +1068,7 @@ __metadata:
     "@types/react-dom": ^18.2.6
     "@typescript-eslint/eslint-plugin": ^6.0.0
     autoprefixer: ^10.4.14
-    daisyui: ^3.2.1
+    daisyui: ^4.0.0
     dayjs: ^1.11.9
     discord-api-types: ^0.37.48
     discord-oauth2: ^2.11.0
@@ -1293,13 +1293,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colord@npm:^2.9":
-  version: 2.9.3
-  resolution: "colord@npm:2.9.3"
-  checksum: 95d909bfbcfd8d5605cbb5af56f2d1ce2b323990258fd7c0d2eb0e6d3bb177254d7fb8213758db56bb4ede708964f78c6b992b326615f81a18a6aaf11d64c650
-  languageName: node
-  linkType: hard
-
 "commander@npm:^4.0.0":
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
@@ -1374,16 +1367,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^3.2.1":
-  version: 3.8.1
-  resolution: "daisyui@npm:3.8.1"
+"culori@npm:^3":
+  version: 3.2.0
+  resolution: "culori@npm:3.2.0"
+  checksum: b4f67308297cb0027c7bbebd2eeb0913c27d844833aad62fa05426455e5abe8800654a660d50b7da4eee562cf7506ae6dbc311c27f1aeccd980fff03596c89e8
+  languageName: node
+  linkType: hard
+
+"daisyui@npm:^4.0.0":
+  version: 4.4.0
+  resolution: "daisyui@npm:4.4.0"
   dependencies:
-    colord: ^2.9
     css-selector-tokenizer: ^0.8
-    postcss: ^8
+    culori: ^3
+    picocolors: ^1
     postcss-js: ^4
-    tailwindcss: ^3
-  checksum: b7680dcb57896368307759a048ca122b3ad00062f65426d21006710b38e5277d15b96bc02405af830b7bf05f7467fd4c0751309e293851f62b3cc34ea97dc763
+  checksum: 24340db8b2bb1e573689b583615c68f5b18db38382ad153237a9159d037a4e46ffc9841c6aeab544d2168dc08ca06549e6308404574226fa64bfa072b53401ea
   languageName: node
   linkType: hard
 
@@ -4078,7 +4077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0":
+"picocolors@npm:^1, picocolors@npm:^1.0.0":
   version: 1.0.0
   resolution: "picocolors@npm:1.0.0"
   checksum: a2e8092dd86c8396bdba9f2b5481032848525b3dc295ce9b57896f931e63fc16f79805144321f72976383fc249584672a75cc18d6777c6b757603f372f745981
@@ -4244,7 +4243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.31, postcss@npm:^8, postcss@npm:^8.0.0, postcss@npm:^8.4.21, postcss@npm:^8.4.23, postcss@npm:^8.4.25":
+"postcss@npm:8.4.31, postcss@npm:^8.0.0, postcss@npm:^8.4.21, postcss@npm:^8.4.23, postcss@npm:^8.4.25":
   version: 8.4.31
   resolution: "postcss@npm:8.4.31"
   dependencies:
@@ -5059,7 +5058,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3, tailwindcss@npm:^3.3.2":
+"tailwindcss@npm:^3.3.2":
   version: 3.3.3
   resolution: "tailwindcss@npm:3.3.3"
   dependencies:
