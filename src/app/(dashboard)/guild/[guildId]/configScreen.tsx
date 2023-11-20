@@ -1,6 +1,6 @@
+import DiscordSelectionComponent from '@components/input/DiscordSelectionComponent';
 import BirthdayMessageComponent from '@components/input/birthdayMessage';
 import PremiumDisplayComponent from '@components/input/premium';
-import DiscordSelectionComponent from '@components/input/selectionComponent';
 import TimeZoneComponent from '@components/input/timeZone';
 import { getGuildChannels, getGuildRoles } from '@lib/utils/discord';
 import type { Guild } from '@prisma/client';

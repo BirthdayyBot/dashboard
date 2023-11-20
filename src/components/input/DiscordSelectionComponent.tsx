@@ -1,14 +1,6 @@
 'use client';
-import type { RESTGetAPIGuildChannelsResult, RESTGetAPIGuildRolesResult } from 'discord-api-types/v10';
 import { ChangeEvent, useState } from 'react';
-
-export interface DiscordSelectionComponentType {
-	type: 'channel' | 'role';
-	guildId: string;
-	label: string;
-	id: string | null;
-	data: RESTGetAPIGuildChannelsResult | RESTGetAPIGuildRolesResult;
-}
+import { DiscordSelectionComponentType } from './selectionComponent';
 
 // TODO: #23 Save that something changed in a state and check it if form is saved
 
@@ -50,7 +42,9 @@ export default function DiscordSelectionComponent(params: DiscordSelectionCompon
 							);
 						})}
 					</select>
-					{/* <SaveButtonComponent isChanged={isChanged} formValue={} guildId={params.guildId} selectionType={params.type} /> */}
+					<button className="btn bg-primary join-item" disabled={!isChanged}>
+						Save
+					</button>
 				</div>
 				Selection: {selection}
 				<br />
