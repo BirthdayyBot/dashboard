@@ -6,6 +6,7 @@ import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
 import ConfigScreen from './configScreen';
 import NotYetInvitedComponent from './notInvited';
+import TestComponent from './tryout';
 
 interface GuildDetailPageProps {
 	params: {
@@ -73,7 +74,8 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 
 	return (
 		<div>
-			My Guild: {guildId} <br />
+			My Guild: {discordData.name} - {guildId} <br />
+			<TestComponent guildId={guildId} />
 			<ConfigScreen guildId={guildId} discordData={discordData} databaseData={databaseData} />
 			<br />
 			<br />
