@@ -36,9 +36,11 @@ export const authOptions: NextAuthOptions = {
 
 			// save guildIds to local storage
 			if (session.secrets.accessToken) {
+				console.log('callback');
 				const guilds = await getUserGuilds(session?.secrets.accessToken);
 				const managableGuilds = await getManageableGuilds(guilds);
 				session.guilds = managableGuilds.map((guild) => guild.id);
+				console.log('callback end');
 			}
 
 			return session;
