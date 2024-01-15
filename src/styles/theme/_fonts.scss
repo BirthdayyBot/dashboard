@@ -5,26 +5,3 @@ $body-font: 'var(--font-hind-vadodara)', sans-serif;
 $family-primary: $body-font;
 $family-secondary: $header-font;
 $family-third: $sub-header-font;
-
-.is-size-1,
-is-size-2,
-is-size-3,
-is-size-4,
-is-size-5,
-is-size-6,
-is-size-7 {
-	font-family: $header-font;
-}
-
-.is-family-title {
-	font-family: $header-font;
-}
-.is-family-sub-title {
-	font-family: $sub-header-font;
-}
-.is-family-text {
-	font-family: $body-font;
-}
-.is-text {
-	font-family: $body-font;
-}

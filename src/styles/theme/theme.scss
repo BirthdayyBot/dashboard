@@ -4,9 +4,7 @@
 * {
 	box-sizing: border-box;
 }
-body {
-	background-color: $dark;
-}
+
 ::-moz-selection {
 	/* Code for Firefox */
 	color: gray;
@@ -41,29 +39,6 @@ body {
 	font-size: 2rem;
 }
 
-.is-strong {
-	font-weight: bold;
-}
-
 .navbar-item {
 	font-size: 1.2rem;
-}
-
-// classname with number as props (e.g. .is-heading-1)
-.is-heading-1 {
-	font-family: $header-font;
-	font-size: 4rem;
-	line-height: 4rem;
-}
-
-.is-heading-2 {
-	font-family: $header-font;
-	font-size: 3.5rem;
-	line-height: 3.5rem;
-}
-
-.is-heading-3 {
-	font-family: $header-font;
-	font-size: 3rem;
-	line-height: 3rem;
 }
