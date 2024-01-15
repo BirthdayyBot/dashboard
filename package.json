@@ -11,7 +11,8 @@
 		"build": "prisma generate && next build",
 		"start": "next start",
 		"lint": "next lint",
-		"prisma-gen": "doppler run prisma generate"
+		"prisma-gen": "doppler run prisma generate",
+		"nextinspect": "node ./node_modules/nextinspect/dist/server.js & yarn ddd"
 	},
 	"dependencies": {
 		"@discordjs/core": "^1.0.0",

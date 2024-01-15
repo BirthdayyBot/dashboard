@@ -43,6 +43,9 @@ const nextConfig = {
 				hostname: 'files.schunk.dev'
 			}
 		]
+	},
+	experimental: {
+		instrumentationHooks: true
 	}
 };
 
