@@ -2,7 +2,7 @@ import { getUserGuilds } from '@lib/utils/oauth';
 import { getServerSession } from '@lib/utils/serverSession';
 import { BitField, enumToObject } from '@sapphire/bitfield';
 import { PermissionFlagsBits } from 'discord-api-types/v10';
-import GuildsDisplay from './GuildsDisplay';
+import GuildsDisplay from '../../../components/pages/guilds/GuildsDisplay';
 
 export default async function GuildsPage() {
 	const session = await getServerSession();

@@ -6,10 +6,10 @@ import Link from 'next/link';
 function GuildDetailCard({ guild }: GuildDetailCardProps) {
 	return (
 		<div className="GuildDetailCard" key={guild.id}>
-			<div className="grid-item mx-auto">
+			<div className="mx-auto grid-item">
 				<Link href={`/guild/${guild.id}`}>
 					<div className="card card-compact">
-						<div className="bg-base-100 text-center">
+						<div className="text-center bg-base-100">
 							<Image
 								src={`https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`}
 								alt={`${guild.name} Server Icon`}
@@ -20,8 +20,8 @@ function GuildDetailCard({ guild }: GuildDetailCardProps) {
 						</div>
 
 						<div className="card-body">
-							<div className="card-title text-center">
-								<p className="  ">{guild.name}</p>
+							<div className="text-center card-title">
+								<p className="">{guild.name}</p>
 							</div>
 						</div>
 					</div>

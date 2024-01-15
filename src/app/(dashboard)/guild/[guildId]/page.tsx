@@ -1,12 +1,13 @@
+import DebugDisplay from '@components/util/DebugDisplay';
 import { guild } from '@lib/utils/db';
 import { getGuildInfo, isGuildManageable } from '@lib/utils/discord';
 import { getServerSession } from '@lib/utils/serverSession';
 import type { Guild } from '@prisma/client';
 import type { APIGuild } from 'discord-api-types/v10';
 import type { Metadata, ResolvingMetadata } from 'next';
-import ConfigScreen from './configScreen';
-import NotYetInvitedComponent from './notInvited';
-import TestComponent from './tryout';
+import ConfigScreen from '../../../../components/pages/guildDetail/configScreen';
+import NotYetInvitedComponent from '../../../../components/pages/guildDetail/notInvited';
+import TestComponent from '../../../../components/pages/guildDetail/tryout';
 
 interface GuildDetailPageProps {
 	params: {
@@ -79,10 +80,10 @@ export default async function GuildDetailPage({ params }: GuildDetailPageProps) 
 			<ConfigScreen guildId={guildId} discordData={discordData} databaseData={databaseData} />
 			<br />
 			<br />
-			Database: {JSON.stringify(databaseData)}
+			<DebugDisplay label="Database" data={JSON.stringify(databaseData)} />
 			<br />
 			<br />
-			Discord: {JSON.stringify(discordData)}
+			<DebugDisplay label="Discord" data={JSON.stringify(discordData)} />
 			<br />
 			<br />
 			Session Guilds: {JSON.stringify(session?.guilds)}
