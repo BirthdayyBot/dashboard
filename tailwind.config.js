@@ -16,7 +16,10 @@ const TailwindConfig = {
 			heading: ['var(--font-rubik)', 'sans-serif'],
 			'sub-heading': ['var(--font-raleway)', 'sans-serif'],
 			body: ['var(--font-hind-vadodara)', 'sans-serif'],
-			sans: ['var(--font-hind-vadodara)', 'sans-serif']
+			sans: ['var(--font-hind-vadodara)', 'sans-serif'],
+			rubik: 'var(--font-rubik)',
+			raleway: 'var(--font-raleway)',
+			'hind-vadodara': 'var(--font-hind-vadodara)'
 		},
 		colors: {
 			neptune: {

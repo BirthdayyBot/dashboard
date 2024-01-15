@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<html lang="en" data-theme="birthdayy" className={`${hindVadodaraFont.variable} ${rubikFont.variable} ${ralewayFont.variable}`}>
 					<body>
 						<Navbar />
-						<div className="main container mx-auto">{children}</div>
+						<div className="container mx-auto main">{children}</div>
 					</body>
 				</html>
 			</AuthProvider>
