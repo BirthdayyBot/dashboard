@@ -24,7 +24,7 @@
 		"dayjs": "^1.11.9",
 		"discord-api-types": "^0.37.48",
 		"discord-oauth2": "^2.11.0",
-		"eslint": "8.56.0",
+		"eslint": "9.2.0",
 		"eslint-config-next": "14.0.4",
 		"jotai": "^2.2.1",
 		"next": "14.0.4",
